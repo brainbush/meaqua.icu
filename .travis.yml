@@ -7,4 +7,4 @@ deploy:
   bucket: meaqua.icu
   region: ap-northeast-1
 after_deploy:
-  - "curl -X POST \"https://api.cloudflare.com/client/v4/zones/023e105f4ecef8ad9ca31a8372d0c353/purge_cache\" -H \"X-Auth-Email: $CLOUDFLARE_EMAIL\" -H \"X-Auth-Key: $CLOUDFLARE_KEY\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}' "
+  - "curl -X POST \"https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE/purge_cache\" -H \"X-Auth-Email: $CLOUDFLARE_EMAIL\" -H \"X-Auth-Key: $CLOUDFLARE_KEY\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}' "
